@@ -1,23 +1,8 @@
 # VSLA Replication Project
 
+Replication of selected results from *Impact of Village Savings and Loan Associations: Evidence from a Cluster Randomized Trial* (Journal of Development Economics, 2016), using household survey data from Malawi.
 
-
-## Overview
-
-This project replicates selected empirical results from the paper:
-
-
-
-**Impact of Village Savings and Loans Associations: Evidence from a Cluster Randomized Trial**
-
-
-
-published in the *Journal of Development Economics (2016)*.
-
-
-
-The project focuses on replicating treatment effect estimations using STATA and understanding the empirical workflow commonly used in development economics research.
-
+This is a learning replication. It reproduces part of the original analysis and does not extend or replace it.
 
 
 ---
@@ -26,25 +11,7 @@ The project focuses on replicating treatment effect estimations using STATA and 
 
 ## Research Question
 
-Does participation in Village Savings and Loan Associations (VSLAs) improve access to loans and financial outcomes among rural households?
-
-
-
----
-
-
-
-## Methodology
-
-- Cluster Randomized Controlled Trial (RCT)
-
-- Intention-to-Treat (ITT) estimation
-
-- OLS regression
-
-- Clustered standard errors
-
-- Block fixed effects
+Does participation in Village Savings and Loan Associations (VSLAs) improve access to loans among rural households?
 
 
 
@@ -54,31 +21,10 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 ## Data
 
-- Household-level survey data
+- Household-level survey data from Malawi, with baseline and post-treatment observations
 
-- Malawi
+- Data source: the original authors' replication package
 
-- Baseline and post-treatment observations
-
-
-
----
-
-
-
-## Key Empirical Workflow
-
-- Constructed reproducible research folder structure
-
-- Loaded and inspected STATA datasets
-
-- Generated transformed variables
-
-- Conducted baseline balance checks
-
-- Estimated treatment effects on loan access
-
-- Interpreted causal inference results
 
 
 
@@ -86,47 +32,74 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 
 
-## Preliminary Findings
+## Methodology
+
+- Cluster Randomized Controlled Trial (RCT), Intention-to-Treat (ITT) estimation
+
+- OLS regression with standard error clustered at village
+
+- Block fixed effects
+
+- Outcome variable: binary indicator of whether the household took a loan
+
+
+
+---
+
+
+
+## Workflow
+
+- Set up a reproducible folder structure
+
+- Load and inspect the Stata datasets
+
+- Construct transformed variables
+
+- Check baseline balance between treatment and control groups
+
+- Estimates treatment effects on loan access
+
+- Run robustness checks with household covariates
+
+- Export regression outputs and figures
+
+
+
+---
+
+
+
+## Results
 
 The replication results suggest that participation in the VSLA treatment significantly increased access to loans.
 
+- Example result: treatment coefficient: 0.122 (p: 0.002)
+- Robustness check: with household controls, the estimated treatment effect moves from approximately 0.104 to 0.097 and remains positive and statistically significant
 
+  The coefficients above come from different outputs saved in this repository. See 'outputs/' and the replication report for the exact specification behind each estimate.
 
-Example result:
+  The household controls used in the robustness check are:
+  - Age of household head
+  - Education of household head
+  - Female-headed household indicator
 
+    The estimates stay similar after adding these controls, which suggests the main result is relatively stable across the specifications reported here. These findings are consistent with the original paper's argument that community-based financial institutions can improve financial inclusion among rural households.
 
-
-- Treatment coefficient: 0.122
-
-- P-value: 0.002
-
-
-
-Interpretation:
-
-The treatment group experienced a statistically significant increase in loan access compared to the control group.
-
-
-
+    
+  
 ---
 
 
 
-## Technical Skills Demonstrated
+## Figures
 
-- STATA
 
-- Applied econometrics
+![Professional Treatment Effect Plot](./graphs/professional_treatment_plot.png)
 
-- Data cleaning
 
-- Causal inference
+![Robustness Plot](./graphs/robustness_plot.png)
 
-- Clustered standard errors
-
-- Empirical replication
-
-- Research documentation
 
 
 
@@ -136,17 +109,25 @@ The treatment group experienced a statistically significant increase in loan acc
 ## Repository Structure
 
 ```
-data/       -> raw datasets
 dofiles/    -> STATA do-files
 outputs/    -> regression outputs
 graphs/     -> figures and visualizations
 paper/      -> original research paper
 reports/    -> replication reports
 note/       -> replication notes and documentation
+```
+
+## Replication Report
+
+[Download Replication Report](reports/Desi_Sari_Ayuni_VSLA_Replication_Report.pdf)
 
 
 
-Next steps:
+## Skills demonstrated
+
+Stata, applied econometrics, data cleaning, causal inference, clustered standard errors, empirical replication, research documentation
+
+## Next steps
 
 - Replicate additional treatment effect tables
 
@@ -156,39 +137,3 @@ Next steps:
 
 - Improve reproducibility workflow
 
-```
-
-## Treatment Effect Visualization
-
-The figure below presents the estimated treatment effect of participation in Village Savings and Loan Associations (VSLAs) on household loan access.
-
-![Professional Treatment Effect Plot](./graphs/professional_treatment_plot.png)
-
-## Robustness Analysis
-
-To assess the robustness of the treatment effect, additional household-level controls were included in the regression specification, including:
-
-- Household head age
-- Household head education
-- Female-headed household indicator
-
-The estimated treatment coefficient remained positive and statistically significant after including controls, suggesting that participation in Village Savings and Loan Associations (VSLAs) improves household access to loans.
-
-The treatment effect decreased slightly from approximately 0.104 to 0.097, indicating that the main findings are relatively stable across model specifications.
-
-This robustness exercise demonstrates basic applied microeconometric workflow commonly used in development economics research.
-![Robustness Plot](./graphs/robustness_plot.png)
-
-## Replication Findings
-
-The replication results suggest that participation in Village Savings and Loan Associations (VSLAs) has a positive effect on household access to loans.
-
-Across specifications, the treatment effect remained statistically significant at the 1% level, with estimated coefficients ranging from approximately 0.097 to 0.104.
-
-The robustness analysis indicates that the estimated treatment effect is relatively stable after controlling for observable household characteristics such as age, education, and female household headship.
-
-These findings are broadly consistent with the original paper’s argument that community-based financial institutions can improve financial inclusion among rural households.
-
-## Replication Report
-
-[Download Replication Report](reports/Desi_Sari_Ayuni_VSLA_Replication_Report.pdf)
