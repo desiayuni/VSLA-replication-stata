@@ -2,7 +2,7 @@
 
 Replication of selected results from *Impact of Village Savings and Loan Associations: Evidence from a Cluster Randomized Trial* (Journal of Development Economics, 2016), using household survey data from Malawi.
 
-This is a learning replication. It reproduces part of the original analysis and does not extend or replace it.
+This is a learning replication. It runs and adapts the original authors' code to reproduce part of the published results, and does not extend the original analysis.
 
 
 ---
@@ -23,9 +23,15 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 - Household-level survey data from Malawi, with baseline and post-treatment observations
 
-- Data source: the original authors' replication package
+- Data source: the original study's replication data. The data is not included in this repository.
 
 
+---
+
+
+## About the code
+
+The main do-file is adapted from the replication code provided by the original authors (Ksoll, Lilleor, Lonborg and Rasmussen). I updated the file paths and ran it to replicate selected results from the paper. The robustness checks with household covariates and the treatment effect plots are my own additions, found `dofiles`
 
 
 ---
@@ -36,11 +42,9 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 - Cluster Randomized Controlled Trial (RCT), Intention-to-Treat (ITT) estimation
 
-- OLS regression with standard errors clustered at village
+- OLS regression with block fixed effects (`i.blocks`) and standard errors clustered at village level
 
-- Block fixed effects
-
-- Outcome variable: binary indicator of whether the household took a loan
+- Outcome : household loan access 
 
 
 
