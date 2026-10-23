@@ -31,7 +31,7 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 ## About the code
 
-The main do-file is adapted from the replication code provided by the original authors (Ksoll, Lilleor, Lonborg and Rasmussen). I updated the file paths and ran it to replicate selected results from the paper. The robustness checks with household covariates and the treatment effect plots are my own additions, found `dofiles`
+The main do-file is adapted from the replication code provided by the original authors (Ksoll, Lilleor, Lonborg and Rasmussen). I updated the file paths and ran it to replicate selected results from the paper. The robustness checks with household covariates and the treatment effect plots are my own additions, found `dofiles/main_replication.do`
 
 
 ---
