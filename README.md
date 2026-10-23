@@ -36,7 +36,7 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 - Cluster Randomized Controlled Trial (RCT), Intention-to-Treat (ITT) estimation
 
-- OLS regression with standard error clustered at village
+- OLS regression with standard errors clustered at village
 
 - Block fixed effects
 
@@ -58,7 +58,7 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 - Check baseline balance between treatment and control groups
 
-- Estimates treatment effects on loan access
+- Estimate treatment effects on loan access
 
 - Run robustness checks with household covariates
 
@@ -72,12 +72,12 @@ Does participation in Village Savings and Loan Associations (VSLAs) improve acce
 
 ## Results
 
-The replication results suggest that participation in the VSLA treatment significantly increased access to loans.
+The replication results suggest that participation in the VSLA treatment is associated with a statistically significant increase in access to loans.
 
-- Example result: treatment coefficient: 0.122 (p: 0.002)
+- Example result: treatment coefficient of 0.122 (p = 0.002)
 - Robustness check: with household controls, the estimated treatment effect moves from approximately 0.104 to 0.097 and remains positive and statistically significant
 
-The coefficients above come from different outputs saved in this repository. See 'outputs/' and the replication report for the exact specification behind each estimate.
+The coefficients above come from different outputs saved in this repository. See `outputs/`and the replication report for the exact specification behind each estimate.
 
   The household controls used in the robustness check are:
   - Age of household head
@@ -113,8 +113,8 @@ dofiles/    -> STATA do-files used for the replication
 outputs/    -> regression outputs
 graphs/     -> figures (treatment effect plot, robustness plot)
 reports/    -> replication report (pdf)
-note/       -> replication notes and documentation
-.gotignore
+notes/       -> replication notes and documentation
+.gitignore
 README.md
 ```
 
