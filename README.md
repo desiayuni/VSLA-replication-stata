@@ -77,14 +77,14 @@ The replication results suggest that participation in the VSLA treatment signifi
 - Example result: treatment coefficient: 0.122 (p: 0.002)
 - Robustness check: with household controls, the estimated treatment effect moves from approximately 0.104 to 0.097 and remains positive and statistically significant
 
-  The coefficients above come from different outputs saved in this repository. See 'outputs/' and the replication report for the exact specification behind each estimate.
+The coefficients above come from different outputs saved in this repository. See 'outputs/' and the replication report for the exact specification behind each estimate.
 
   The household controls used in the robustness check are:
   - Age of household head
   - Education of household head
   - Female-headed household indicator
 
-    The estimates stay similar after adding these controls, which suggests the main result is relatively stable across the specifications reported here. These findings are consistent with the original paper's argument that community-based financial institutions can improve financial inclusion among rural households.
+The estimates stay similar after adding these controls, which suggests the main result is relatively stable across the specifications reported here. These findings are consistent with the original paper's argument that community-based financial institutions can improve financial inclusion among rural households.
 
     
   
@@ -109,12 +109,13 @@ The replication results suggest that participation in the VSLA treatment signifi
 ## Repository Structure
 
 ```
-dofiles/    -> STATA do-files
+dofiles/    -> STATA do-files used for the replication
 outputs/    -> regression outputs
-graphs/     -> figures and visualizations
-paper/      -> original research paper
-reports/    -> replication reports
+graphs/     -> figures (treatment effect plot, robustness plot)
+reports/    -> replication report (pdf)
 note/       -> replication notes and documentation
+.gotignore
+README.md
 ```
 
 ## Replication Report
